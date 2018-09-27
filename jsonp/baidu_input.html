@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp">
+    <button type="submit">搜索</button>
+    <script src="jsonp.js"></script>
+    <script>
+        var $inp = document.getElementById('inp');
+        $inp.onkeypress = function (ev) {
+            var oEvent = ev || event;   //处理兼容
+            console.log(oEvent.keyCode);
+        }
+        function getBaiduParams(data) {
+            console.log(data);
+        }
+        var params = {
+            wd: $inp.value,
+            json: 1,
+            p: 3,
+            sid: "1440_21116_26350_22075",
+            req: 2,
+            csor: 2,
+            cb: "getBaiduParams"
+        }
+        jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', params);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

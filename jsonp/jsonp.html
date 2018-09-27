@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <!-- <script src="a.css"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="jsonp.js"></script>
+    <script>
+        // fn(123);
+        // script 标签在发送请求获取静态资源文件时, 是不会做判断的, 
+        // 把请求的文本直接放入到script标签中,当js进行解析
+        
+        // script标签请求文件时,没有同源策略的限制 
+        
+        // jsonp 跨域实现的原理: 就是利用了script标签没有同源策略, 需要前后端同时参与
+        // jsonp的形式, 不是发送ajax
+        //  jsonp只能处理get请求.
+        //  支持jsonp形式的接口,数据安全性很低
+        var params = {
+            username: 'xixi',
+            cb: "fn"
+        }
+        jsonp('jsonp.php', params);
+    
+    </script>
+    <!-- <script src="jsonp.php">
+        // 等价于
+        fn({name: '小兰'})
+    </script> -->
+    <script>
+            function fn(data) {
+                console.log(data);
+            }    
+            
+            
+        </script> 
+
+</body>
+</html>

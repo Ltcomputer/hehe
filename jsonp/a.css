@@ -1,0 +1,4 @@
+/* var arr = {name: '小兰', age: 18};
+arr = JSON.stringify(arr);
+fn(arr); */
+/* "fn({name: '小兰', age: 18})" */
